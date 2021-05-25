@@ -58,7 +58,7 @@ class Board extends React.Component {
         }
         //No winner found
         //Set the status for next move
-        const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+        status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 
         //Display everything
         return (

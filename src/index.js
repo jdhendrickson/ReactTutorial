@@ -33,6 +33,12 @@ class Board extends React.Component {
             squares: Array(9).fill(null),
         };
     }
+    //A click handler to handle any clicks. Toggles between X and O.
+    handleClick(i) {
+        const squares = this.state.squares.slice();
+        squares[i] = 'X';
+        this.setState({squares: squares});
+    }
     //Remember to re-render the squares and pass down the state
     renderSquare(i) {
         return (

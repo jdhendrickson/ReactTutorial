@@ -8,6 +8,12 @@ import './index.css';
 * Each of these squares will hold one game piece
 */
 class Square extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: null,
+        };
+    }
     //Remember to re-render the square
     render() {
         return (

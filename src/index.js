@@ -8,16 +8,15 @@ import './index.css';
 * Each of these squares will hold one game piece
 */
 class Square extends React.Component {
-
     //Remember to re-render the square
     render() {
         return (
             //Set the state
             <button
                 className="square"
-                onClick={() => this.setState({value: 'X'})}
+                onClick={() => this.props.onClick()}
             >
-            {this.state.value}
+            {this.props.value}
             </button>
         );
     }

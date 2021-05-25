@@ -61,6 +61,7 @@ class Game extends React.Component {
             history: [{//Game state
                 squares: Array(9).fill(null),//Piece Location
             }],
+            stepNumber: 0,//Which move the game is at currently
             xIsNext: true,//Next player
         };
     }

@@ -84,6 +84,16 @@ class Game extends React.Component {
             xIsNext: !this.state.xIsNext,//Toggle player
         });
     }
+    /**
+    * A function to jump to the step the game was at.
+    * step: Int. Which step to jump to.
+    */
+    jumpTo(step) {
+        this.setState({
+            stepNumber: step,
+            xIsNext: (step % 2) === 0,
+        });
+    }
     render() {
         const history = this.state.history;
         const current = history[history.length - 1];

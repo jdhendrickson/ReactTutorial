@@ -19,14 +19,6 @@ function Square(props) {
 * This is the game board. It holds 9 squares.
 */
 class Board extends React.Component {
-    //Constructor so there is storage for the piece state
-    constructor(props) {
-        super(props);
-        this.state = {
-            squares: Array(9).fill(null),//Square Storage
-            xIsNext: true,//Next Player State
-        };
-    }
     //A click handler to handle any clicks. Toggles between X and O.
     handleClick(i) {
         const squares = this.state.squares.slice();
@@ -86,13 +78,14 @@ class Board extends React.Component {
 }
 
 class Game extends React.Component {
+    //Constructor so there is storage for the piece state and move history
     constructor(props) {
         super(props);
         this.state = {
-            history: [{
-                squares: Array(9).fill(null),
+            history: [{//Game state
+                squares: Array(9).fill(null),//Piece Location
             }],
-            xIsNext: true,
+            xIsNext: true,//Next player
         };
     }
     render() {

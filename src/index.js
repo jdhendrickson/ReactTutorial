@@ -32,7 +32,10 @@ class Board extends React.Component {
         const squares = this.state.squares.slice();
         //Remember to check next player
         squares[i] = this.state.xIsNext ? 'X' : 'O';
-        this.setState({squares: squares});
+        this.setState({
+            squares: squares,//Store player click location
+            xIsNext: !this.state.xIsNext,//Toggle player
+        });
     }
     //Remember to re-render the squares and pass down the state
     renderSquare(i) {

@@ -19,20 +19,6 @@ function Square(props) {
 * This is the game board. It holds 9 squares.
 */
 class Board extends React.Component {
-    //A click handler to handle any clicks. Toggles between X and O.
-    handleClick(i) {
-        const squares = this.state.squares.slice();
-        //Check if game is won or square is filled
-        if (calculateWinner(squares) || squares[i]) {
-            return;
-        }
-        //Remember to check next player
-        squares[i] = this.state.xIsNext ? 'X' : 'O';
-        this.setState({
-            squares: squares,//Store player click location
-            xIsNext: !this.state.xIsNext,//Toggle player
-        });
-    }
     //Remember to re-render the squares and pass down the state
     renderSquare(i) {
         return (
@@ -89,6 +75,20 @@ class Game extends React.Component {
             }],
             xIsNext: true,//Next player
         };
+    }
+    //A click handler to handle any clicks. Toggles between X and O.
+    handleClick(i) {
+        const squares = this.state.squares.slice();
+        //Check if game is won or square is filled
+        if (calculateWinner(squares) || squares[i]) {
+            return;
+        }
+        //Remember to check next player
+        squares[i] = this.state.xIsNext ? 'X' : 'O';
+        this.setState({
+            squares: squares,//Store player click location
+            xIsNext: !this.state.xIsNext,//Toggle player
+        });
     }
     render() {
         return (

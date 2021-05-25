@@ -34,21 +34,17 @@ class Board extends React.Component {
         //Display everything
         return (
             <div>
-                //Display status
                 <div className="status">{status}</div>
-                //Display row 1
                 <div className="board-row">
                 {this.renderSquare(0)}
                 {this.renderSquare(1)}
                 {this.renderSquare(2)}
                 </div>
-                //Display row 2
                 <div className="board-row">
                 {this.renderSquare(3)}
                 {this.renderSquare(4)}
                 {this.renderSquare(5)}
                 </div>
-                //Display row 3
                 <div className="board-row">
                 {this.renderSquare(6)}
                 {this.renderSquare(7)}

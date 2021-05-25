@@ -24,7 +24,7 @@ class Square extends React.Component {
 }
 
 /**
-* This is the game board. It holds 9 squares
+* This is the game board. It holds 9 squares.
 */
 class Board extends React.Component {
     //Constructor so there is storage for the piece state
@@ -34,9 +34,9 @@ class Board extends React.Component {
             squares: Array(9).fill(null),
         };
     }
-    //Remember to re-render the squares
+    //Remember to re-render the squares and pass down the state
     renderSquare(i) {
-        return <Square value={i} />;
+        return <Square value={this.state.squares[i]} />;
     }
 
     render() {

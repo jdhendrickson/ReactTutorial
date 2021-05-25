@@ -8,13 +8,7 @@ import './index.css';
 * Each of these squares will hold one game piece
 */
 class Square extends React.Component {
-    //Constructor so there is storage for the piece state
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: null,
-        };
-    }
+
     //Remember to re-render the square
     render() {
         return (
@@ -33,6 +27,13 @@ class Square extends React.Component {
 * This is the game board. It holds 9 squares
 */
 class Board extends React.Component {
+    //Constructor so there is storage for the piece state
+    constructor(props) {
+        super(props);
+        this.state = {
+            squares: Array(9).fill(null),
+        };
+    }
     //Remember to re-render the squares
     renderSquare(i) {
         return <Square value={i} />;

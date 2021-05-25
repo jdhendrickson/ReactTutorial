@@ -78,7 +78,9 @@ class Game extends React.Component {
     }
     //A click handler to handle any clicks. Toggles between X and O.
     handleClick(i) {
-        const squares = this.state.squares.slice();
+        const history = this.state.history;
+        const current = history[history.length - 1];
+        const squares = current.squares.slice();
         //Check if game is won or square is filled
         if (calculateWinner(squares) || squares[i]) {
             return;
@@ -86,7 +88,10 @@ class Game extends React.Component {
         //Remember to check next player
         squares[i] = this.state.xIsNext ? 'X' : 'O';
         this.setState({
-            squares: squares,//Store player click location
+            //Add a new history entry
+            history: history.concat([{
+                squares: squares,
+            }]),
             xIsNext: !this.state.xIsNext,//Toggle player
         });
     }

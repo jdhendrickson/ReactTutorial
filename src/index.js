@@ -30,6 +30,10 @@ class Board extends React.Component {
     //A click handler to handle any clicks. Toggles between X and O.
     handleClick(i) {
         const squares = this.state.squares.slice();
+        //Check if game is won or square is filled
+        if (calculateWinner(squares) || squares[i]) {
+            return;
+        }
         //Remember to check next player
         squares[i] = this.state.xIsNext ? 'X' : 'O';
         this.setState({
@@ -56,7 +60,7 @@ class Board extends React.Component {
         } else {//No winner found
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
-        
+
         //Display everything
         return (
             <div>

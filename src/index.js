@@ -8,7 +8,8 @@ import './index.css';
 * Each of these squares will hold one game piece
 */
 class Square extends React.Component {
-    render() {//Remember to render the square
+    //Remember to re-render the square
+    render() {
         return (
             <button className="square">
             {/* TODO */}
@@ -21,27 +22,33 @@ class Square extends React.Component {
 * This is the game board. It holds 9 squares
 */
 class Board extends React.Component {
-    //Remember to render the squares
+    //Remember to re-render the squares
     renderSquare(i) {
         return <Square />;
     }
 
     render() {
+        //Set the status
         const status = 'Next player: X';
 
+        //Display everything
         return (
             <div>
+                //Display status
                 <div className="status">{status}</div>
+                //Display row 1
                 <div className="board-row">
                 {this.renderSquare(0)}
                 {this.renderSquare(1)}
                 {this.renderSquare(2)}
                 </div>
+                //Display row 2
                 <div className="board-row">
                 {this.renderSquare(3)}
                 {this.renderSquare(4)}
                 {this.renderSquare(5)}
                 </div>
+                //Display row 3
                 <div className="board-row">
                 {this.renderSquare(6)}
                 {this.renderSquare(7)}

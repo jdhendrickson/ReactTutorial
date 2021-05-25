@@ -68,7 +68,8 @@ class Game extends React.Component {
     //A click handler to handle any clicks. Toggles between X and O.
     handleClick(i) {
         const history = this.state.history;
-        const current = history[history.length - 1];
+        //Render based on step number
+        const current = history[this.state.stepNumber];
         const squares = current.squares.slice();
         //Check if game is won or square is filled
         if (calculateWinner(squares) || squares[i]) {

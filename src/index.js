@@ -81,6 +81,7 @@ class Game extends React.Component {
             history: history.concat([{
                 squares: squares,
             }]),
+            stepNumber: history.length,//Which step the game is on
             xIsNext: !this.state.xIsNext,//Toggle player
         });
     }

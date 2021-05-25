@@ -2,8 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+/**
+* This is the individual Square
+* The game board will hold 9 of these
+* Each of these squares will hold one game piece
+*/
 class Square extends React.Component {
-  render() {
+  render() {//Remember to render the square
     return (
       <button className="square">
         {/* TODO */}

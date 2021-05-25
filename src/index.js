@@ -67,7 +67,8 @@ class Game extends React.Component {
     }
     //A click handler to handle any clicks. Toggles between X and O.
     handleClick(i) {
-        const history = this.state.history;
+        //Make a branch at current step number instead of pulling everything
+        const history = this.state.history.slice(0, this.state.stepNumber + 1);
         //Render based on step number
         const current = history[this.state.stepNumber];
         const squares = current.squares.slice();

@@ -7,19 +7,12 @@ import './index.css';
 * The game board will hold 9 of these
 * Each of these squares will hold one game piece
 */
-class Square extends React.Component {
-    //Remember to re-render the square
-    render() {
-        return (
-            //Set the state
-            <button
-                className="square"
-                onClick={() => this.props.onClick()}
-            >
-            {this.props.value}
-            </button>
-        );
-    }
+function Square(props) {
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
 
 /**
